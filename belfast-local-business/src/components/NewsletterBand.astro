@@ -1,0 +1,18 @@
+---
+// Uses Netlify Forms: sign-ups appear in your Netlify dashboard under Forms.
+---
+<section id="newsletter" class="band-light" aria-labelledby="newsletter-h">
+  <div class="band-text">
+    <h2 id="newsletter-h">Local news and offers, every Friday</h2>
+    <p>The week's best Belfast business stories and deals in your inbox. Free, unsubscribe anytime.</p>
+  </div>
+  <form class="signup" name="newsletter" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company-website">
+    <input type="hidden" name="form-name" value="newsletter" />
+    <p class="hidden"><label>Leave this empty <input name="company-website" /></label></p>
+    <div class="field">
+      <label for="nl-email">Email address</label>
+      <input id="nl-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+    </div>
+    <button class="btn btn-dark" type="submit">Sign up</button>
+  </form>
+</section>
