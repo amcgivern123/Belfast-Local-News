@@ -1,0 +1,20 @@
+# Rebuilds the site every morning so scheduled articles appear
+# and expired offers disappear. Needs a Netlify build hook saved
+# as a GitHub secret called NETLIFY_BUILD_HOOK (see README).
+name: Daily rebuild
+
+on:
+  schedule:
+    - cron: "7 5 * * *"   # about 5am UK time
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Netlify build
+        env:
+          HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "No build hook set yet, skipping."; exit 0; fi
+          curl -s -X POST -d '{}' "$HOOK"
