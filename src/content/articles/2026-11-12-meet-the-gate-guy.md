@@ -6,6 +6,7 @@ date: 2026-11-12
 category: trades-services
 area: Belfast
 author: Belfast Local Business
+image: /images/AutoGate Logo.jpg
 imageAlt: Electric Gates Belfast and Electric Gate Repairs
 pinned: true
 draft: false
